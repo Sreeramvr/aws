@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>navbar</title>
+    <style>
+        .tit h2{
+            display: inline-block;
+            margin: 1px auto;
+        }
+        
+        .head{
+         display: inline-block;
+        
+        }
+        .navbar{
+            border-radius: 30px;
+            margin: top 10px; 
+            align-items: flex-end;
+            
+        }
+        .navbar li{
+            float:left;
+            list-style: none; 
+            margin: 13px 17px;
+        }
+        .navbar li a{
+            padding: 5px 5px;
+            text-decoration: none;
+        
+        }
+        .navbar li a:hover{
+            color:blue;
+        }
+        .navbar ul{
+            overflow:auto;
+            width: 665px;
+        }
+        .search{
+            float: right;
+            color: white;
+            padding-top: 10px;
+            padding-right: 13px;
+    
+        }
+            
+        .navbar input{
+            border: 2px solid black;
+            border-radius: 14px;
+            padding: 3px 17px;
+            width: 129px;
+            align-items: center;
+        }
+        .logo img{
+            list-style: none;
+            width: 30px;
+            height:30px;
+            display: block;
+
+        }
+
+
+    </style>
+</head>
+<body>
+    <header>
+    <div class="head">
+        <div class="logo">
+            <img src="/logo.jpg" alt="">
+        </div> 
+        <div class="tit">
+            <h2>TARKA INFOTECH </h2>
+       </div>
+        
+    </div>
+    <div>
+        <nav class="navbar">
+            <ul>
+                
+                <li><a href="#"> Home</a></li>
+                <li><a href="#"> About</a></li>
+                <li><a href="#"> Services</a></li>
+                <li><a href="#"> Contact us</a></li> 
+                <li><a href="#">Details</a></li>
+                <div class="search">
+                    <input type="text" name="search" id="search" placeholder="search this website">
+                </div>
+            </ul>
+        </nav>
+    </div>
+    </header>
+    </body>
+</html>

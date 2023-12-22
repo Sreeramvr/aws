@@ -1,0 +1,594 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<link rel="icon" type="image/png" sizes="16x16" href="images/company_logos/tarka_icon.png">
+	<title>Vyapak ERP</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="assets/plugins/bootstrap-datepicker/css/datepicker.css"/>
+	<link rel="stylesheet" type="text/css" href="assets/plugins/bootstrap-datetimepicker/css/datetimepicker.css"/>
+	<link rel="stylesheet" type="text/css" href="plugins/bower_components/clockpicker/dist/jquery-clockpicker.min.css"/>
+	<!-- animation CSS -->
+    <link href="css/animate.css" rel="stylesheet">
+    <!-- Menu CSS -->
+    <link href="plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.css" rel="stylesheet">
+    <!-- toast CSS -->
+    <link href="plugins/bower_components/toast-master/css/jquery.toast.css" rel="stylesheet">
+    <!-- morris CSS -->
+    <link href="plugins/bower_components/morrisjs/morris.css" rel="stylesheet">
+	<link rel="stylesheet" href="jqwidgets/styles/jqx.base.css" type="text/css" />
+    <!-- chartist CSS -->
+    <link href="plugins/bower_components/css-chart/css-chart.css" rel="stylesheet">
+    <!-- Calendar CSS -->
+    <link href="plugins/bower_components/calendar/dist/fullcalendar.css" rel="stylesheet" />
+    <!-- animation CSS -->
+	<link href="plugins/bower_components/switchery/dist/switchery.min.css" rel="stylesheet" />
+	<link href="plugins/bower_components/calendar/dist/fullcalendar.css" rel="stylesheet" />
+	<!-- sweet alert -->
+	<link href="plugins/bower_components/sweetalert2/sweetalert2.css" rel="stylesheet" type="text/css">
+	<link href="plugins/bower_components/css-chart/css-chart.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/graph_tables.css" />
+	<!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet">
+    <!-- color CSS -->
+    <link href="css/colors/blue.css" id="theme" rel="stylesheet">
+	<!-- Calendar CSS -->
+    <link href="../plugins/bower_components/calendar/dist/fullcalendar.css" rel="stylesheet" />
+	<!-- BEGIN Multi-Value Select -->
+	<link rel="stylesheet" type="text/css" href="assets/plugins/select2/select2.css"/>
+	<link rel="stylesheet" type="text/css" href="assets/plugins/select2/select2-metronic.css"/>
+	<!-- PAGINATION STYLES -->
+	<link rel="stylesheet" type="text/css" href="js/base_file/paginate/css/paginate_style.css" media="screen"/>
+	<!--jqgrid -->
+	<link rel="stylesheet" type="text/css" href="jquery-ui-1.10.3/themes/Smoothness/jquery-ui.css" /> 
+	<link rel='stylesheet' type='text/css' href='JQGrid4/css/ui.jqgrid.css' />	
+	<link href="assets/plugins/TableDnD-master/tablednd.css" rel="stylesheet" type="text/css"/>
+	<link href="assets/plugins/impromptu/jquery-impromptu.css" rel="stylesheet" type="text/css"/>
+	<link rel="stylesheet" type="text/css" href="assets/plugins/bootstrap-fileinput/bootstrap-fileinput.css"/>
+	<link rel="stylesheet" type="text/css" href="assets/plugins/table-sorter/css/table_sort.css"/>
+	<link href="css/tarka.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/tarka_font_large.css">
+	<link rel="stylesheet" type="text/css" href="css/tarka_font_medium.css">
+	<link rel="stylesheet" type="text/css" href="css/tarka_font_small.css">
+		<link rel="stylesheet" href="assets/plugins/data-tables/DT_bootstrap.css"/>
+	<style>
+		.img-circle {
+			border-radius: 50% !important;
+		}
+		.panel {
+			border: 1px solid #a2c9d0;
+			border-radius: 5px !important;
+			margin-bottom: 10px;
+		}
+		.panel {
+			background-color: #fdfdfd !important;
+			box-shadow: 1px 1px 1px 1px rgba(45, 26, 25, 0.2) !important;
+		}
+		.panel .panel-body {
+			padding: 5px 10px;
+		}
+		ul.wallet-list li {
+			border-top: 1px solid rgba(120, 130, 140, 0.13);
+			display: block;
+			font-size: 15px;
+			font-weight: bolder;
+			list-style: outside none none;
+			padding: 5px 10px;
+		}
+		ul.right-list li {
+			border-top: 1px solid rgba(120, 130, 140, 0.13);
+			display: block;
+			font-size: 15px;
+			font-weight: bolder;
+			list-style: outside none none;
+			padding: 5px 10px;
+		}
+		ul.right-list li a {
+			color: #313131;
+			vertical-align: middle;
+		}
+		ul.right-list li i {
+			color: #2cabe3;
+			display: inline-block;
+			font-size: 24px;
+			margin-right: 12px;
+			vertical-align: middle;
+		}
+		.label-rounded {
+			border-radius: 60px !important;
+			font-size: 14px !important;
+			font-weight: bold !important;
+			padding: 4px 12px 3px !important;
+		}
+	</style>
+</head>	
+<body onLoad="loadMasters();" class="fix-header">
+    <!-- ============================================================== -->
+    <!-- Preloader -->
+    <!-- ============================================================== -->
+    <div class="preloader">
+        <svg class="circular" viewBox="25 25 50 50">
+            <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
+        </svg>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Wrapper -->
+    <!-- ============================================================== -->
+    <div id="wrapper">
+        <!-- ============================================================== -->
+        <!-- Topbar header - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+		
+		<nav class="navbar navbar-default navbar-static-top m-b-0">
+            <div class="navbar-header">
+                <div class="top-left-part">
+                    <!-- Logo -->
+                    <a class="logo">
+                        <!-- Logo icon image, you can use font-icon also -->
+						<b>
+                        <!--This is dark logo icon-->
+						<!--	<img src="images/company_logos/comp_logo_left.png" alt="home" class="dark-logo" width="33px" height="31px">-->
+						<!--This is light logo icon-->
+						</b>
+                        <!-- Logo text image you can use text also -->
+						<span class="hidden-xs">
+							 <img src="images/company_logos/comp_logo_right.png" alt="home" class="dark-logo" height="31px">
+						</span> 
+					</a>
+                </div>
+                <!-- /Logo -->
+                <!-- Search input and Toggle icon -->
+                <ul class="nav navbar-top-links navbar-left">
+                    <li><a href="javascript:void(0)" class="open-close waves-effect waves-light visible-xs"><i class="ti-close ti-menu"></i></a></li>
+                </ul>
+                <ul class="nav navbar-top-links navbar-right pull-right">
+					<li style="padding-top:7 px" class="">
+						<a href="#" class="right-side-toggle waves-effect waves-light"><i class="fa fa-angle-double-left" style="animation-name: none;left: 0px;position: sticky;top: 0px;"></i></a>
+					</li>
+					<li class="mega-dropdown" id="my_menus">
+						<a class="dropdown-toggle waves-effect waves-light" data-toggle="dropdown" href="#"><span class="hidden-xs">My Menus</span> <i class="icon-options-vertical"></i></a>
+						 <ul class="dropdown-menu mega-dropdown-menu animated bounceInDown" id="user_mega_menu">
+						 </ul>
+					</li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#"> 
+						<img src="plugins/images/users/empty.png" alt="user-img" width="36" class="img-circle">
+						<b class="hidden-xs" id='login_user_name_display'>&nbsp;</b><span class="caret"></span> </a>
+                        <ul class="dropdown-menu dropdown-user animated flipInY">
+                            <li>
+								<div class="dw-user-box" style="text-align:center">
+									<div class="u-img"><img src="plugins/images/users/empty.png" alt="user" /></div>
+                                    <div class="u-text">
+										<b id="login_user_name_display"></b>
+										<p id="login_user_email" class="text-muted"></p>
+									</div>
+                                </div>
+                            </li>
+                            <li role="separator" class="divider"></li>
+                           <!--  <li>
+								<button class="right-side-toggle waves-effect waves-light btn-info btn-circle pull-left m-l-15"><i class="ti-settings text-white"></i></button>Theme</li> -->
+							<li>
+								<div>
+									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-desktop"></i>&nbsp;
+									<a onclick="changeToSmallCSS();" style="cursor: pointer; font-size: 12px;" class="active" id="small_font">A</a>
+									 &nbsp;
+									<a class="active" style="cursor: pointer; font-size: 14px;" onclick="changeToMediumCSS();" id="medium_font">A</a>
+									 &nbsp;
+									<a class="active" style="cursor: pointer; font-size: 16px;" onclick="changeToLargeCSS();" id="large_font">A</a>
+								</div>
+							</li>
+							
+							<li><a style='cursor:pointer;' onclick='EnableManageMenu();'><i class="fa fa-bars"></i> My Menus Setup</a></li>
+							<!-- <li><a style='cursor:pointer;' onclick='HomePage.OpenUserProfilePopup();'><i class="fa fa-user"></i> View Profile</a></li> -->
+							<li><a style='cursor:pointer;' onclick='EnableChangePassword(1);'><i class="fa fa-key"></i> Change Password</a></li>
+							<li><a style='cursor:pointer;' onclick='logout();'><i class="fa fa-power-off"></i> Logout</a></li>
+                        </ul>
+                        <!-- /.dropdown-user -->
+                    </li>
+                    <!-- /.dropdown -->
+                </ul>
+            </div>
+            <!-- /.navbar-header -->
+            <!-- /.navbar-top-links -->
+            <!-- /.navbar-static-side -->
+        </nav>
+        <!-- End Top Navigation -->
+        <!-- ============================================================== -->
+        <!-- Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+	
+			<div id="ref_display_popup" class="well" style="height:auto;width:70%;overflow-y:auto"> 
+				<a class='popup_overlay_title' id='ref_display_popup_title'></a>
+				<a class="popup_overlay_close" href="#" onclick="$('#ref_display_popup').popup('toggle')" style='float:right;'>X</a>  
+				<div class="col-md-12 text-center  no-padding" id='ref_display_popup_data'>
+				</div>
+
+			</div>  
+        <div class="navbar-default sidebar" id="nav_default_sidebar" role="navigation">
+            <div class="sidebar-nav">
+                <div class="sidebar-head">
+                    <h3><span class="fa-fw open-close"><i class="ti-menu hidden-xs"></i><i class="ti-close visible-xs"></i></span> <span class="hide-menu">Menu</span></h3>
+                </div>
+				<ul class="nav" id="side-menu">
+				
+				</ul>
+				<!-- $(".fa-fw").trigger("click"); -->
+            </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Left Sidebar -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Page Content -->
+        <!-- ============================================================== -->
+		<input type="hidden" id="module_name_for_save" name="module_name_for_save" value=''/>
+		<input type="hidden" id='login_counter' />
+		<input type="hidden" id='g_group_s_ref_data_code' />
+		<div id="page-wrapper" style="padding-bottom: 35px;">
+            <div class="container-fluid" style="padding-left:6px;padding-right:6px;padding-bottom:0px;">
+                <!-- .row -->
+				<div class="col-md-12" style="padding-left:0px;padding-right:0px;">
+					<div class="white-box" style="padding: 0px;margin-bottom:0px">
+						<section>
+							<div class="sttabs tabs-style-bar">
+								<nav>
+									<ul id='menu_tabs'>
+										<li class="tab-current" id="li_1"><a href="#section-bar-1" onclick="home('home_dashboard');" class="fa fa-home" style="border-radius: 5px !important;"> &nbsp;<span>Home</span></a></li>
+
+									</ul>
+								</nav> 
+								
+								<div class="content-wrap" id="section_bars">										
+									<section id="section-bar-1" style='padding: 0px 5px 5px;'>
+										<div class="row">
+											<div class="col-sm-12" style="padding-left:0px">
+												<div class="white-box section-bar-min-height" id="home_dashboard" style="padding:0px">
+
+												</div>
+											</div>
+										</div>
+									</section> 
+								</div>
+								<!-- /content -->
+							</div>
+							<!-- /tabs -->
+						</section>
+						<!-- Tabstyle start -->
+						
+					</div>
+					
+					<div id="myModal" class="modal fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+						<div class="modal-dialog">
+							<div class="modal-content" style="border-radius:8px !important;">
+								<div class="modal-header" style="padding: 6px;">
+									<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+									<h4 class="modal-title" id="myModalLabel" style="color: #00546f; font-weight: normal; font-size: 18px;"> </h4> 
+								</div>
+								<div class="modal-body" id='model_body' style="padding: 10px;">
+								</div>
+								<div class="modal-footer" style="border-top: 0px;padding: 5px;">
+								</div>
+							</div>
+						</div>
+					</div> 
+
+					<div id="new_modal"></div>					
+						
+				</div>
+                <div class="row" id='main_body'>				
+					<form class="form-group" id='form_module_image_upload' enctype='multipart/form-data' method='POST'> 
+					<input type='hidden' name= 'MAX_FILE_SIZE' value='10000000000' /> 
+					<div  class="page_main_div" id="page_main_div"   align="left"></div>				
+					<div class="clearfix">
+						</div>	
+					</form>	
+
+					<input type="hidden" id="module_name_for_save" name="module_name_for_save" value=''/>
+					<input type="hidden" id='login_counter'>
+					<input type="hidden" id='g_group_s_ref_data_code'>								
+			</div>
+                <!-- /.row -->
+                <!-- ============================================================== -->
+                <!-- Right sidebar -->
+                <!-- ============================================================== -->
+                <!-- .right-sidebar -->
+				<div class="right-sidebar">
+                    <div class="slimscrollright">
+                        <div class="rpanel-title" style="background: #a2c9d0 none repeat scroll 0 0; color:#595959;font-weight:600;"> Service Panel <span><i class="ti-close right-side-toggle"></i></span> </div>
+                        <div class="r-panel-body" style="padding: 5px;">
+                            <ul class="right-list" id="right_panel_list">
+
+								<!-- <li style="padding: 20px;"> -->
+									<!-- <a onclick="SoCalendar.OpenSoCalendar();$('.ti-close').trigger('click');" href="#">&nbsp;<i class="fa fa-calendar"></i>&nbsp;&nbsp;&nbsp; <span>SO Calender</span></a> -->
+								<!-- </li> -->
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Right sidebar -->
+                <!-- ============================================================== -->
+            </div>
+			
+			<div id="dialog" title="">
+				<div   id='grid_popup_data'>
+									 
+				</div>
+			</div>	
+<div id="grid_popup_emp_field_map" class="modal fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content" style="border-radius:8px !important;">
+						<div class="modal-header" style="padding: 6px;">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+							<h4 class="modal-title" id="grid_popup_pop_field_map_title" style="color: #00546f; font-weight: normal; font-size: 18px;"> </h4> 
+						</div>
+						<div class="modal-body" id='grid_popup_field_map_data' style="padding: 10px;">
+						</div>
+						<div class="modal-footer" style="border-top: 0px;padding: 5px;">
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+            <!-- /.container-fluid -->
+            <footer class="footer text-center" style="padding: 5px 20px 0px 10px;">
+				<span style="float:left">
+					<img height="20px" src="images/company_logos/vyapak_logo.jpg">
+					<b style="font-weight: bold;font-size:12px"> v 2.0</b>
+				</span>
+				<span id='footer_company_name'></span> 
+				<span style="float:right">
+					<b style="font-weight: 400;" id="powered_by"></b>
+					<img height="20px" style="margin-bottom: 5px;" src="images/company_logos/index_logo.png">	
+				</span>
+			</footer>
+        </div>
+	</div>
+	<!-- /#page-wrapper -->
+	
+	<!-- TO be removed as discussed on 11-5-2020 -->
+		<!-- <a class="btn default" id='grid_popup_anchor_emp' style='display:none;' data-toggle="modal" href="#grid_popup_emp_model"></a>
+			<div class="modal fade" id="grid_popup_emp_model" tabindex="-1" role="basic" aria-hidden="true">
+					<div class="modal-dialog" id="modal_dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+								<h4 class="modal-title" id='grid_popup_pop_title'>Modal Title</h4>
+							</div>
+							<div class="modal-body" id='grid_popup_emp_data'>
+								 Modal body goes here
+							</div>
+							 
+				</div>
+			</div>					
+			</div> -->
+	<!-- ============================================================== -->
+	<!-- End Page Content -->
+	<!-- ============================================================== -->
+	<!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- All Jquery -->
+    <!-- ============================================================== -->
+	<script type="text/javascript" src="custom_js/home_page.js"></script>
+	<script type="text/javascript" src="js/change_password.js"></script>
+    <script src="plugins/bower_components/jquery/dist/jquery.min.js"></script>
+    
+    <!--Counter js -->
+    <script src="plugins/bower_components/waypoints/lib/jquery.waypoints.js"></script>
+    <script src="plugins/bower_components/counterup/jquery.counterup.min.js"></script>
+    <!--Morris JavaScript -->
+    <script src="plugins/bower_components/raphael/raphael-min.js"></script>
+    <script src="plugins/bower_components/morrisjs/morris.js"></script>
+    <!-- chartist chart -->
+    
+	<script type="text/javascript" src="highcharts/highcharts.js"></script> 
+	<script type="text/javascript" src="highcharts/highcharts-more.js"></script> 
+	<script type="text/javascript" src="highcharts/solid-gauge.js"></script> 
+	
+    <!-- Calendar JavaScript -->
+    <script src="plugins/bower_components/moment/moment.js"></script>
+    <script src='plugins/bower_components/calendar/dist/fullcalendar.min.js'></script>
+    <script src="plugins/bower_components/calendar/dist/cal-init.js"></script>
+	<script src="plugins/bower_components/switchery/dist/switchery.min.js"></script>
+	<script src="plugins/bower_components/sweetalert2/sweetalert2.js"></script>
+	<script type="text/javascript" src="assets/plugins/TableDnD-master/js/jquery.tablednd.js"></script>
+	<script src="assets/plugins/jquery-ui/jquery-ui-1.10.3.custom.js" type="text/javascript"></script>
+	<!--<script type="text/javascript" src="jquery-ui-1.10.3/js/themes/Smoothness/jquery-ui.js"></script>-->
+ 	<script type="text/javascript" src="jquery-ui-1.10.3/jquery.dialogextend.js"></script>
+	<script type="text/javascript" src="assets/plugins/bootstrap-fileinput/bootstrap-fileinput.js"></script>
+	
+    
+	<script type="text/javascript" src="js/base_file/head.load.min.js"></script>
+	<script type="text/javascript" src="js/base_file/jquery.inputmask.bundle.min.js"></script>
+	<script type="text/javascript" src="js/base_file/head.load.min.js"></script>
+	<script type="text/javascript" src="assets/plugins/table-sorter/jquery.tablesorter.js"></script>
+      <!-- <script src="js/dashboard1.js"></script>
+	Custom tab JavaScript -->
+    <script src="plugins/js/cbpFWTabs.js"></script>
+    <script type="text/javascript">
+    (function() {
+        [].slice.call(document.querySelectorAll('.sttabs')).forEach(function(el) {
+            new CBPFWTabs(el);
+        });
+    })();
+	var elems = Array.prototype.slice.call(document.querySelectorAll('.js-switch'));
+	$('.js-switch').each(function() {
+		new Switchery($(this)[0], $(this).data());
+	});
+    </script>
+	<script type="text/javascript"> 		
+ head.js("js/system.js").js("js/usersetup.js").js("js/form_submit.js").js("js/footer.js").js("js/validate.js")
+ .js("js/system_utility.js").js("custom_js/OnloadModule.js").js("custom_js/preCustomGridEditValidation.js");
+</script>
+<script type="text/javascript">
+
+
+function downloadJSAtOnload() {
+	 var ran=Math.random();
+	var modules = [
+	{ include: true, incfile:'js/MainPageNew.js?r='+ran }, 
+	{ include: true, incfile:'js/popup_new.js' } ,
+	{ include: true, incfile:'js/base_file/mask/ui.mask.js' } ,  
+	{ include: true, incfile:'js/base_file/mask/ui.core.js' } , 
+	{ include: true, incfile:'js/MultiGrid.js' } , 
+	{ include: true, incfile:'js/approvals.js' } , 
+	{ include: true, incfile:'js/manage_menu.js' } , 
+	{ include: true, incfile:'js/right_panel.js' } , 
+	{ include: true, incfile:'assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js' },  
+	{ include: true, incfile:'assets/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js' },
+	{ include: true, incfile:'plugins/bower_components/clockpicker/dist/jquery-clockpicker.min.js' },
+	{ include: true, incfile:'custom_js/month_year.js'} , 
+	{ include: true, incfile:'custom_js/custom_dashboard_functions.js' },
+	{ include: true, incfile:'custom_js/PreMultipleSaveValidation.js' },
+	];
+	var filename;
+		for(var i=0;i<modules.length; i++)
+		{
+			if(modules[i].include === true) {        	
+				filename =  modules[i].incfile;
+				var element = document.createElement("script");
+				element.src =filename;
+				document.body.appendChild(element);
+				<!-- console.log(i); -->
+			}
+		}
+}
+if (window.addEventListener)
+window.addEventListener("load", downloadJSAtOnload, false);
+else if (window.attachEvent)
+window.attachEvent("onload", downloadJSAtOnload);
+else window.onload = downloadJSAtOnload;
+<!-- $('li').siblings('.li_2').hide(); -->
+<!-- $('li').siblings('.li_3').hide(); -->
+<!-- $('li').siblings('.li_4').hide(); -->
+<!-- $('li').siblings('.li_5').hide(); -->
+
+</script>
+	<script src="js/base_file/jquery.browser_detect.js"></script> 
+    <script src="plugins/bower_components/toast-master/js/jquery.toast.js"></script>
+   
+	<script type="text/javascript" src="js/MainPage.js"></script>
+	<script type="text/javascript" src="js/MainPageNew.js"></script>
+ 
+	<script src="assets/scripts/core/app.js" type="text/javascript"></script>
+	<script src="assets/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+	<script type="text/javascript" src="js/popup_new.js"></script>
+	<script type='text/javascript' src='js/load_js_files.js'></script>
+	<script type="text/javascript" src="js/base_file/ajax_queue.js"></script>
+	<script type="text/javascript" src="js/base_file/sessionexpired.js"></script> 
+
+	<script type="text/javascript" src="js/grid_display.js"></script> 
+	<script type="text/javascript" src="js/gandhi_grid_popup.js"></script>	
+	<script type='text/javascript' src='JQGrid4/js/i18n/grid.locale-en.js'></script>			 
+	<script type='text/javascript' src='JQGrid4/js/jquery.jqGrid.min.js'></script>				 
+	<script type='text/javascript' src='JQGrid4/src/grid.loader.js'></script>
+	<script type="text/javascript" src="js/jquery.popupoverlay.js"></script>
+ 
+ 		<!-- Including Custom JS Files -->
+	<script type='text/javascript' src='custom_js/common.js'></script>
+	<script type='text/javascript' src='custom_js/custom_approvals.js'></script>
+	<script type='text/javascript' src='custom_js/custom_dashboard_functions.js'></script>
+	<!-- <script type='text/javascript' src='custom_js/custom_grsid_popup.js'></script> -->
+	<script type='text/javascript' src='custom_js/PreSaveModuleValidation.js'></script>
+	<script type='text/javascript' src='custom_js/postSaveSchemaGroupDetails.js'></script>
+	<script type='text/javascript' src='custom_js/PreMultipleSaveValidation.js'></script>
+	<script type='text/javascript' src='custom_js/graphs.js'></script>
+ 
+ 	<script type='text/javascript' src='custom_js/dashboard_calculation.js'></script>
+	
+ 
+
+	<script type="text/javascript" src="assets/plugins/impromptu/jquery-impromptu.js"></script>
+	 
+	<script type="text/javascript" src="js/base_file/jquery.inputmask.bundle.min.js"></script>	
+	<!-- Bootstrap Core JavaScript -->
+    <script src="bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- Menu Plugin JavaScript -->
+    <script src="plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.js"></script>
+    <!--slimscroll JavaScript -->
+    <script src="plugins/js/jquery.slimscroll.js"></script>
+    <!--Wave Effects -->
+    <script src="plugins/js/waves.js"></script>
+	<!-- Custom Theme JavaScript -->
+    <script src="plugins/js/custom.min.js"></script>
+	<!--Style Switcher -->
+    <script src="plugins/bower_components/styleswitcher/jQuery.style.switcher.js"></script>
+	<!-- CKEditor -->
+	<script type="text/javascript" src="assets/plugins/ckeditor/ckeditor.js"></script>
+	<!-- BEGIN PAGE LEVEL PLUGINS -->
+	<script type="text/javascript" src="assets/plugins/select2/select2.min.js"></script>
+	<!-- CKEditor -->
+	<script type="text/javascript" src="custom_js/task_inbox.js"></script>
+	
+	<script type="text/javascript" src="custom_js/formula_popup.js"></script>
+ 
+	<script type="text/javascript" src="jqwidgets/jqxcore.js"></script>
+	<script type="text/javascript" src="jqwidgets/jqxdata.js"></script>
+	<script type="text/javascript" src="jqwidgets/jqxbuttons.js"></script>
+	<script type="text/javascript" src="jqwidgets/jqxscrollbar.js"></script>
+	<script type="text/javascript" src="jqwidgets/jqxdatatable.js"></script>
+	<script type="text/javascript" src="jqwidgets/jqxtreegrid.js"></script>
+	<!-- Calendar JavaScript -->
+    <script src="../plugins/bower_components/moment/moment.js"></script>
+    <script src='../plugins/bower_components/calendar/dist/fullcalendar.min.js'></script>
+    <script src="../plugins/bower_components/calendar/dist/cal-init.js"></script>
+	<!-- PAGINATION STYLES -->
+	<script type="text/javascript" src="js/base_file/paginate/jquery.paginate.js"></script>
+	<script type="text/javascript" src="assets/plugins/data-tables/jquery.dataTables.js"></script>
+	<script type="text/javascript" src="assets/plugins/data-tables/DT_bootstrap.js"></script>
+
+ <script>
+ $("#ref_display_popup").popup({
+ escape: "true" ,
+   opacity: 0.6,
+	offsettop:60,   color:'#000',
+   transition: "all 0.3s",  autozindex: true
+ });
+ 
+function changeToSmallCSS() {
+    $('link[href="css/tarka_font_small.css"]')[0].disabled=false;
+    $('link[href="css/tarka_font_medium.css"]')[0].disabled=true;
+    $('link[href="css/tarka_font_large.css"]')[0].disabled=true;
+	$("#small_font").addClass('current_font');
+	$("#medium_font").removeClass('current_font');
+	$("#large_font").removeClass('current_font');
+	setTimeout(function(){ HandleWindowResize();}, 200);
+}
+function changeToMediumCSS() {
+    $('link[href="css/tarka_font_small.css"]')[0].disabled=true;
+    $('link[href="css/tarka_font_medium.css"]')[0].disabled=false;
+    $('link[href="css/tarka_font_large.css"]')[0].disabled=true;
+	$("#small_font").removeClass('current_font');
+	$("#medium_font").addClass('current_font');
+	$("#large_font").removeClass('current_font');
+	setTimeout(function(){ HandleWindowResize();}, 200);
+}
+function changeToLargeCSS() {
+    $('link[href="css/tarka_font_small.css"]')[0].disabled=true;
+    $('link[href="css/tarka_font_medium.css"]')[0].disabled=true;
+    $('link[href="css/tarka_font_large.css"]')[0].disabled=false;
+	$("#small_font").removeClass('current_font');
+	$("#medium_font").removeClass('current_font');
+	$("#large_font").addClass('current_font');
+	setTimeout(function(){ HandleWindowResize();}, 200);
+}
+
+$(window).on('resize', function() {
+	HandleWindowResize();
+});
+
+</script> 
+</body>
+
+</html>
